@@ -1,0 +1,90 @@
+$font-family-montserrat-alternates: "Montserrat Alternates", sans-serif;
+$font-family-monofett: "Monofett", monospace;
+
+@mixin monofett-regular() {
+  font-family: $font-family-monofett;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin montserrat-alternates($font-weight, $font-style) {
+  font-family: $font-family-montserrat-alternates;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+@mixin montserrat-alternates-thin() {
+  @include montserrat-alternates(100);
+}
+
+@mixin montserrat-alternates-extralight() {
+  @include montserrat-alternates(200, normal);
+}
+
+@mixin montserrat-alternates-light() {
+  @include montserrat-alternates(300, normal);
+}
+
+@mixin montserrat-alternates-regular() {
+  @include montserrat-alternates(400, normal);
+}
+
+@mixin montserrat-alternates-medium() {
+  @include montserrat-alternates(500, normal);
+}
+
+@mixin montserrat-alternates-semibold() {
+  @include montserrat-alternates(600, normal);
+}
+
+@mixin montserrat-alternates-bold() {
+  @include montserrat-alternates(700, normal);
+}
+
+@mixin montserrat-alternates-extrabold() {
+  @include montserrat-alternates(800, normal);
+}
+
+@mixin montserrat-alternates-black() {
+  @include montserrat-alternates(900, normal);
+}
+
+@mixin montserrat-alternates-thin-italic() {
+  @include montserrat-alternates(100, italic);
+}
+
+@mixin montserrat-alternates-extralight-italic() {
+  @include montserrat-alternates(200, italic);
+}
+
+@mixin montserrat-alternates-light-italic() {
+  @include montserrat-alternates(300, italic);
+}
+
+@mixin montserrat-alternates-regular-italic() {
+  @include montserrat-alternates(400, italic);
+}
+
+@mixin montserrat-alternates-medium-italic() {
+  @include montserrat-alternates(500, italic);
+}
+
+@mixin montserrat-alternates-semibold-italic() {
+  @include montserrat-alternates(600, italic);
+}
+
+@mixin montserrat-alternates-bold-italic() {
+  @include montserrat-alternates(700, italic);
+}
+
+@mixin montserrat-alternates-extrabold-italic() {
+  @include montserrat-alternates(800, italic);
+}
+
+@mixin montserrat-alternates-black-italic() {
+  @include montserrat-alternates(900, italic);
+}
+
+* {
+  @include montserrat-alternates-regular();
+}
