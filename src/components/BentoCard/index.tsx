@@ -1,5 +1,16 @@
-import './styles.scss';
+import { ReactNode } from 'react';
+import BentoCardPerfil from './Perfil';
+import styles from './styles.module.scss';
 
-export const BentoCard = () => {
-  return <button className='bentoCard'>bento</button>
+type Props = {
+  children: ReactNode,
+  className?: string,
 }
+
+function BentoCard({ children, className = '' }: Props) {
+  return <div className={`${className} ${styles.bentoCard}`}>{children}</div>
+}
+
+BentoCard.Perfil = BentoCardPerfil;
+
+export default BentoCard;
