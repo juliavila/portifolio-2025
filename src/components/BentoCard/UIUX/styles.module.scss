@@ -1,0 +1,34 @@
+@use '../../../styles/variables.scss' as *;
+@use '../../../styles/fonts.scss' as *;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  height: 100%;
+  padding-bottom: 16px;
+  box-sizing: border-box;
+
+  p {
+    @include monofett-regular();
+
+    font-size: 96px;
+
+
+    &.light {
+      color: $color-light;
+      @include text-stroke($color-dark);
+    }
+
+    &.dark {
+      color: $color-dark;
+    }
+
+    &:hover {
+      color: $color-highlight;
+      text-shadow: none;
+    }
+  }
+
+}

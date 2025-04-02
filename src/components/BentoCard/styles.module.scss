@@ -1,5 +1,7 @@
+@use '../../styles/variables.scss' as *;
+
 .bentoCard {
-  background-color: #F2F2EA;
+  background-color: $color-light;
   border: none;
   cursor: pointer;
   border-radius: 16px;

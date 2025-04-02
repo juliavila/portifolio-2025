@@ -10,7 +10,7 @@ export const BentoHome = () => {
     <div className={styles.content}>
 
       <div className={styles.header}>
-        <img src="https://images.unsplash.com/photo-1658843057461-9727fd6d0566?q=80&w=2681&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="me" height={'100px'} />
+        <span className={styles.pic}></span>
         <h3>❀ Portifólio 2025</h3>
       </div>
 
@@ -23,7 +23,7 @@ export const BentoHome = () => {
           <BentoCard>external-links</BentoCard>
         </div>
         <div className={className('card ui-ux')}>
-          <BentoCard>ui-ux</BentoCard>
+          <BentoCard.UIUX />
         </div>
         <div className={className('card development')}>
           <BentoCard>development</BentoCard>
