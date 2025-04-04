@@ -11,6 +11,10 @@ $font-family-monofett: "Monofett", monospace;
     -$size) 0 $color;
 }
 
+@mixin remove-text-stroke() {
+  text-shadow: none;
+}
+
 @mixin monofett-regular() {
   font-family: $font-family-monofett;
   font-weight: 400;
@@ -24,7 +28,7 @@ $font-family-monofett: "Monofett", monospace;
 }
 
 @mixin montserrat-alternates-thin() {
-  @include montserrat-alternates(100
+  @include montserrat-alternates(100, normal
 );
 }
 

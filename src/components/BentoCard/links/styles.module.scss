@@ -1,0 +1,42 @@
+@use './../../../styles' as *;
+
+.links {
+
+  &:hover .content .link {
+    color: $color-dark;
+    @include montserrat-alternates-regular();
+    @include remove-text-stroke();
+  }
+
+  .content {
+    margin: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: initial;
+    width: fit-content;
+    justify-content: center;
+    align-items: flex-start;
+
+    .link {
+      text-decoration: none;
+      @include montserrat-alternates-light();
+      @include text-stroke($color-dark);
+      font-size: 48px;
+      text-transform: uppercase;
+      color: $color-light;
+      border-bottom: solid 4px transparent;
+      letter-spacing: 4px;
+      max-width: 280px;
+
+      &:hover {
+        @include montserrat-alternates-black();
+        background-color: $color-dark;
+        color: $color-light;
+        border-bottom-color: $color-highlight;
+        letter-spacing: 2px;
+      }
+    }
+
+  }
+}

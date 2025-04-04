@@ -20,7 +20,7 @@ export const BentoHome = () => {
           <BentoCard.Perfil />
         </div>
         <div className={className('card external-links')}>
-          <BentoCard>external-links</BentoCard>
+          <BentoCard.Links />
         </div>
         <div className={className('card ui-ux')}>
           <BentoCard.UIUX />
@@ -30,9 +30,6 @@ export const BentoHome = () => {
         </div>
 
       </div>
-
-
     </div>
-
   </div >
 }

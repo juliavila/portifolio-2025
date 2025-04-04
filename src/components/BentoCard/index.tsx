@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import BentoCardPerfil from './Perfil';
 import styles from './styles.module.scss';
 import BentoCardUIUX from './UIUX';
+import BentoCardLinks from './links';
 
 type Props = {
   children: ReactNode,
@@ -14,5 +15,6 @@ function BentoCard({ children, className = '' }: Props) {
 
 BentoCard.Perfil = BentoCardPerfil;
 BentoCard.UIUX = BentoCardUIUX;
+BentoCard.Links = BentoCardLinks;
 
 export default BentoCard;

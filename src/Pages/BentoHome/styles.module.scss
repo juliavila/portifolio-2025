@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@use '../../styles' as *;
 
 $max-width: 860px;
 $header-height: 100px;
