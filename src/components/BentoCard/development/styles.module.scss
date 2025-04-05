@@ -1,0 +1,93 @@
+@use './../../../styles' as *;
+
+.content {
+
+  position: relative;
+  color: $color-dark;
+
+  &:hover .word {
+    max-width: 226px;
+    transform: translate(-50%, -50%);
+    color: $color-highlight;
+
+    @include montserrat-alternates-semibold();
+
+    &.one {
+      animation-name: right-to-center;
+    }
+
+    &.two {
+      animation-name: left-to-center;
+    }
+  }
+
+  &:not(:hover) .word {
+    &.one {
+      transform: translate(-45%, -45%);
+      animation-name: center-to-right;
+    }
+
+    &.two {
+      transform: translate(-55%, -55%);
+      animation-name: center-to-left;
+    }
+  }
+
+  .word {
+    left: 50%;
+    top: 50%;
+    font-size: 102px;
+    max-width: 222px;
+    word-wrap: break-word;
+    text-transform: uppercase;
+    line-height: 90px;
+    position: absolute;
+
+    @include montserrat-alternates-light();
+
+    /** animation config */
+    animation-duration: 300ms;
+    animation-iteration-count: 1;
+    transition-timing-function: ease;
+  }
+}
+
+@keyframes right-to-center {
+  from {
+    transform: translate(-45%, -45%);
+  }
+
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes left-to-center {
+  from {
+    transform: translate(-55%, -55%);
+  }
+
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes center-to-right {
+  from {
+    transform: translate(-50%, -50%);
+  }
+
+  to {
+    transform: translate(-45%, -45%);
+  }
+}
+
+@keyframes center-to-left {
+  from {
+    transform: translate(-50%, -50%);
+  }
+
+  to {
+    transform: translate(-55%, -55%);
+  }
+}

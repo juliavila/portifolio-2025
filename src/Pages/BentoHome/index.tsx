@@ -11,7 +11,7 @@ export const BentoHome = () => {
 
       <div className={styles.header}>
         <span className={styles.pic}></span>
-        <h3>❀ Portifólio 2025</h3>
+        <h3>Portifólio 2025</h3>
       </div>
 
       <div className={styles.deck}>
@@ -26,7 +26,7 @@ export const BentoHome = () => {
           <BentoCard.UIUX />
         </div>
         <div className={className('card development')}>
-          <BentoCard>development</BentoCard>
+          <BentoCard.Development />
         </div>
 
       </div>

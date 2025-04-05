@@ -1,7 +1,7 @@
 @use '../../styles' as *;
 
 $max-width: 860px;
-$header-height: 100px;
+$header-height: 94px;
 
 .bentoHome {
   background-color: $color-dark;
@@ -35,6 +35,7 @@ $header-height: 100px;
       background-position: 50%;
       border-radius: $border-radius;
       border: 4px solid $color-light;
+      box-sizing: border-box;
     }
   }
 
