@@ -10,11 +10,14 @@ const colors = [
 ]
 
 
-function BentoCardUIUX() {
+function BentoCardUIUX({ showDetails }: { showDetails: boolean }) {
   return <BentoCard>
-    <div className={styles.container}>
-      {text.map(characeter)}
-    </div>
+    {
+      showDetails ? <div>details</div> :
+        <div className={styles.container}>
+          {text.map(characeter)}
+        </div>
+    }
   </BentoCard>
 }
 

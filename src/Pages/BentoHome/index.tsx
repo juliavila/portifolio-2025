@@ -1,34 +1,116 @@
+import { useState } from 'react';
 import BentoCard from '../../components/BentoCard'
+import Header from '../../components/Header';
 import { concatClassName } from '../../util/style'
 import styles from './styles.module.scss'
 
+const ANIMATION_DURATION = 300;
+
 const className = (names: string) => concatClassName(styles, names);
 
-export const BentoHome = () => {
-  return <div className={styles.bentoHome}>
+type statusTypes = 'idle' | 'focused' | 'hidden';
+type animationTypes = 'ease-in' | 'ease-out';
+type cardsTypes = 'perfil' | 'links' | 'uiux' | 'development';
+type cardConfig = Record<cardsTypes, { status: statusTypes, animation: animationTypes }>
 
+function getAllCards(status: statusTypes, animation: animationTypes): cardConfig {
+  return {
+    perfil: {
+      status,
+      animation
+    },
+    links: {
+      status,
+      animation
+    },
+    uiux: {
+      status,
+      animation
+    },
+    development: {
+      status,
+      animation
+    }
+  }
+};
+
+export const BentoHome = () => {
+
+  const [cardStatus, setCardStatus] = useState<cardConfig>(getAllCards('idle', 'ease-in'));
+  const [focused, setFocused] = useState<cardsTypes | undefined>();
+
+  function getShowDetails(key: cardsTypes) {
+    return cardStatus[key].status === 'focused'
+  }
+
+  function focusCard(key: cardsTypes) {
+    setCardStatus(getAllCards('idle', 'ease-out'))
+
+    setTimeout(() => {
+      setFocused(key);
+      setCardStatus({
+        ...getAllCards('hidden', 'ease-out'), [key]: {
+          status: 'focused',
+          animation: 'ease-in'
+        }
+      })
+    }, ANIMATION_DURATION);
+  }
+
+  function reestartCards() {
+    if (focused) {
+      setFocused(undefined);
+
+      setCardStatus((current) => ({
+        ...current, [focused]: {
+          status: 'focused',
+          animation: 'ease-out'
+        }
+      }));
+
+      setTimeout(() => {
+        setCardStatus(getAllCards('idle', 'ease-in'))
+      }, ANIMATION_DURATION);
+    }
+  }
+
+  return <div className={styles.bentoHome}>
     <div className={styles.content}>
 
-      <div className={styles.header}>
-        <span className={styles.pic}></span>
-        <h3>Portifólio 2025</h3>
-      </div>
+      <Header goToHome={reestartCards} />
 
       <div className={styles.deck}>
-
-        <div className={className('card perfil')}>
-          <BentoCard.Perfil />
+        <div
+          card-status={cardStatus.perfil.status}
+          card-animation={cardStatus.perfil.animation}
+          onClick={() => focusCard('perfil')}
+          className={className('card perfil')}
+        >
+          <BentoCard.Perfil showDetails={getShowDetails('perfil')} />
         </div>
-        <div className={className('card external-links')}>
+        <div
+          card-status={cardStatus.links.status}
+          card-animation={cardStatus.links.animation}
+          className={className('card links')}
+        >
           <BentoCard.Links />
         </div>
-        <div className={className('card ui-ux')}>
-          <BentoCard.UIUX />
+        <div
+          card-status={cardStatus.uiux.status}
+          card-animation={cardStatus.uiux.animation}
+          onClick={() => focusCard('uiux')}
+          className={className('card uiux')}
+        >
+          <BentoCard.UIUX showDetails={getShowDetails('uiux')} />
         </div>
-        <div className={className('card development')}>
-          <BentoCard.Development />
+        <div
+          card-status={cardStatus.development.status}
+          card-animation={cardStatus.development.animation}
+          onClick={() => focusCard('development')}
+          className={className('card development')}
+        >
+          <BentoCard.Development showDetails={getShowDetails('development')} />
         </div>
-
       </div>
     </div>
   </div >

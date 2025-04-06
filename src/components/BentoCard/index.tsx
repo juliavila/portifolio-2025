@@ -6,12 +6,14 @@ import BentoCardLinks from './links';
 import BentoCardDevelopment from './development';
 
 type Props = {
-  children: ReactNode,
   className?: string,
+  children: ReactNode,
 }
 
 function BentoCard({ children, className = '' }: Props) {
-  return <div className={`${className} ${styles.bentoCard}`}>{children}</div>
+  return <div className={`${className} ${styles.bentoCard}`}>
+    {children}
+  </div>
 }
 
 BentoCard.Perfil = BentoCardPerfil;

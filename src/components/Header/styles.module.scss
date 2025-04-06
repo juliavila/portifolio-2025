@@ -1,0 +1,57 @@
+@use './../../styles' as *;
+
+.header {
+  display: flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .title {
+    color: $color-light;
+    font-size: 24px;
+    cursor: pointer;
+
+    letter-spacing: 1.4px;
+
+    &:hover {
+      @include montserrat-alternates-semibold();
+      letter-spacing: 1px;
+    }
+  }
+
+  .pic {
+    height: $header-height;
+    aspect-ratio: 1;
+    background-image: url("../../../public/julia_vila_lima.jpg");
+    background-size: cover;
+    background-position: 50%;
+    border-radius: $border-radius;
+    border: 4px solid $color-light;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $color-highlight;
+    }
+  }
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  button {
+    appearance: none;
+    background: none;
+    padding: 0;
+    border: none;
+    border-bottom: solid 1px transparent;
+    font-size: 14px;
+    margin: 8px;
+
+    &:hover {
+      border-color: $color-dark;
+    }
+  }
+}

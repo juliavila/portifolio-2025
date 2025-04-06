@@ -4,6 +4,7 @@
 
   position: relative;
   color: $color-dark;
+  height: 100%;
 
   &:hover .word {
     max-width: 226px;
@@ -37,6 +38,7 @@
     left: 50%;
     top: 50%;
     font-size: 102px;
+    text-align: center;
     max-width: 222px;
     word-wrap: break-word;
     text-transform: uppercase;

@@ -1,19 +1,113 @@
+@use './../../../styles' as *;
+
 .container {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   justify-content: center;
   height: 100%;
   padding: 10%;
   box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+
+  @include montserrat-alternates-light();
 
   h1 {
-    font-size: 2.5em;
+    font-size: 96px;
+    text-transform: lowercase;
+    line-height: 92px;
+    color: $color-dark;
   }
 
   p {
+    font-size: 22px;
+    color: $color-highlight;
+  }
 
-    font-size: .8em;
+  h1,
+  p {
+    position: absolute;
 
+    /** animation config */
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+    transition-timing-function: ease;
+  }
+
+
+  &:hover {
+    h1 {
+      animation-name: hide-name;
+      opacity: 0;
+      transform: translate(0, -100%);
+    }
+
+    p {
+      animation-name: show-desc;
+      opacity: 100%;
+    }
+  }
+
+  &:not(:hover) {
+    h1 {
+      animation-name: show-name;
+      opacity: 100%;
+    }
+
+    p {
+      animation-name: hide-desc;
+      opacity: 0;
+      transform: translate(0, 200%);
+    }
+  }
+}
+
+@keyframes show-name {
+  from {
+    opacity: 0;
+    transform: translate(0, -100%);
+
+  }
+
+  to {
+    opacity: 100%;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes hide-name {
+  from {
+    opacity: 100%;
+    transform: translate(0, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(0, -100%);
+  }
+}
+
+@keyframes show-desc {
+  from {
+    opacity: 0;
+    transform: translate(0, 200%);
+  }
+
+  to {
+    opacity: 100%;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes hide-desc {
+  from {
+    opacity: 100%;
+    transform: translate(0, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(0, 200%);
   }
 }
