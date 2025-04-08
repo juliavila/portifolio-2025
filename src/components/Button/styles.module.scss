@@ -1,0 +1,15 @@
+@use '../../styles' as *;
+
+.customButton {
+  appearance: none;
+  padding: 0;
+  border: none;
+  border-bottom: solid 1px $color-dark;
+  font-size: 24px;
+
+  &:hover {
+    border-color: $color-highlight;
+    background-color: $color-highlight;
+    color: $color-light;
+  }
+}

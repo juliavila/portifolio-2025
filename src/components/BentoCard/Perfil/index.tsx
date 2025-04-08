@@ -1,12 +1,32 @@
 import BentoCard from ".."
+import BentoCardDetails from "../BentoCardDetails";
 import styles from './styles.module.scss'
 
-function BentoCardPerfil({ showDetails }: { showDetails: boolean }) {
+type Props = {
+  showDetails: boolean,
+  onClose: () => void;
+  onFocus: () => void;
+}
+
+const detailsParagraphs = [
+  'Tenho 9 anos de experiência em desenvolvimento de software, atuo hoje como desenvolvedora frontend e designer de experiência.',
+  'Sou formada pelo IFSul como técnica em informática (2014) e sou graduada em Design Digital pela ULBRA (2024).'
+];
+
+function BentoCardPerfil({ showDetails, onClose, onFocus }: Props) {
   return <BentoCard>
-    {showDetails ?
-      <div>details</div>
+    {showDetails
+      ?
+      <BentoCardDetails
+        onClose={onClose}
+        title="Júlia Vila de Lima"
+        paragraphs={detailsParagraphs}
+      />
       :
-      <div className={styles.container}>
+      <button
+        className={styles.container}
+        onClick={onFocus}
+      >
         <h1>Júlia<br />Vila<br />Lima</h1>
         <p>
           frontend developer,
@@ -16,7 +36,7 @@ function BentoCardPerfil({ showDetails }: { showDetails: boolean }) {
           <br />
           ✽ ✾ ✿ ❀ ❁ ❃ ❊ ❋ ✤
         </p>
-      </div>
+      </button>
     }
   </ BentoCard>
 }

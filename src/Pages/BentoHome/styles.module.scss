@@ -43,12 +43,6 @@ $max-width: 860px;
     transition-timing-function: ease;
     transition-property: opacity;
 
-    &.perfil,
-    &.uiux,
-    &.development {
-      cursor: pointer;
-    }
-
     &[card-animation=ease-in] {
       animation-name: ease-in-animation;
       opacity: 1;

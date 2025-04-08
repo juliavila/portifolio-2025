@@ -2,8 +2,8 @@ import { ReactNode } from 'react';
 import BentoCardPerfil from './Perfil';
 import styles from './styles.module.scss';
 import BentoCardUIUX from './UIUX';
-import BentoCardLinks from './links';
-import BentoCardDevelopment from './development';
+import BentoCardLinks from './Links';
+import BentoCardDevelopment from './Development';
 
 type Props = {
   className?: string,

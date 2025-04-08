@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from './styles.module.scss';
 import Modal from '../Modal';
+import Button from '../Button';
 
 function Header({ goToHome }: { goToHome: () => void }) {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -17,7 +18,7 @@ function Header({ goToHome }: { goToHome: () => void }) {
     <Modal onCloseModal={() => setShowModal(false)} showModal={showModal}>
       <div className={styles['modal-content']}>
         <p>next portfolio under development</p>
-        <button onClick={() => setShowModal(false)}>ok</button>
+        <Button onClick={() => setShowModal(false)}>ok</Button>
       </div>
     </Modal>
   </div>

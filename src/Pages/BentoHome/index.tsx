@@ -83,11 +83,15 @@ export const BentoHome = () => {
         <div
           card-status={cardStatus.perfil.status}
           card-animation={cardStatus.perfil.animation}
-          onClick={() => focusCard('perfil')}
           className={className('card perfil')}
         >
-          <BentoCard.Perfil showDetails={getShowDetails('perfil')} />
+          <BentoCard.Perfil
+            showDetails={getShowDetails('perfil')}
+            onClose={reestartCards}
+            onFocus={() => focusCard('perfil')}
+          />
         </div>
+
         <div
           card-status={cardStatus.links.status}
           card-animation={cardStatus.links.animation}
@@ -95,21 +99,29 @@ export const BentoHome = () => {
         >
           <BentoCard.Links />
         </div>
+
         <div
           card-status={cardStatus.uiux.status}
           card-animation={cardStatus.uiux.animation}
-          onClick={() => focusCard('uiux')}
           className={className('card uiux')}
         >
-          <BentoCard.UIUX showDetails={getShowDetails('uiux')} />
+          <BentoCard.UIUX
+            showDetails={getShowDetails('uiux')}
+            onClose={reestartCards}
+            onFocus={() => focusCard('uiux')}
+          />
         </div>
+
         <div
           card-status={cardStatus.development.status}
           card-animation={cardStatus.development.animation}
-          onClick={() => focusCard('development')}
           className={className('card development')}
         >
-          <BentoCard.Development showDetails={getShowDetails('development')} />
+          <BentoCard.Development
+            showDetails={getShowDetails('development')}
+            onClose={reestartCards}
+            onFocus={() => focusCard('development')}
+          />
         </div>
       </div>
     </div>
