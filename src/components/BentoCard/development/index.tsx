@@ -15,8 +15,18 @@ const className = (names: string) => concatClassName(styles, names);
 
 const detailsParagraphs = ['Tenho 9 anos de experiência em desenvolvimento de software, atuando principalmente com foco em front-end web.',
   'Tenho amplo domínio de HTML, CSS, JavaScript e TypeScript, além de experiência com frameworks como React e Angular. Trabalho com metodologias ágeis, possuo conhecimento em testes unitários e versionamento com Git. ',
-  'Ah, e este site que você está navegando foi desenvolvido por mim. 😊 O projeto está diponível no Github.'
 ];
+
+const detailsFooter = <p>Ah, e este site que você está navegando foi desenvolvido por mim. 😊 O projeto está diponível no
+  {' '}
+  <a
+    href="https://github.com/juliavila/portifolio-2025"
+    target="_blank"
+  >
+    Github
+  </a>
+  .
+</p>
 
 function BentoCardDevelopment({ showDetails, onClose, onFocus }: Props) {
   return <BentoCard>
@@ -25,7 +35,9 @@ function BentoCardDevelopment({ showDetails, onClose, onFocus }: Props) {
       <BentoCardDetails
         onClose={onClose}
         title={"Desenvolvimento"}
-        paragraphs={detailsParagraphs} />
+        paragraphs={detailsParagraphs}
+        footer={detailsFooter}
+      />
       :
       <button className={styles.content} onClick={onFocus}>
         <span className={className('word one')}>{word}</span>
