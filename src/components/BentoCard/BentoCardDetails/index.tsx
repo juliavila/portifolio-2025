@@ -16,7 +16,7 @@ function BentoCardDetails({ onClose, title, paragraphs, footer }: Props) {
     </div>
     <div className={styles.content}>
       <h2>{title}</h2>
-      {paragraphs.map(p => <p>{p}</p>)}
+      {paragraphs.map(p => <p key='p'>{p}</p>)}
       {footer &&
         <div className={styles.footer}>{footer}</div>
       }

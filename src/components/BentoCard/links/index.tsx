@@ -28,7 +28,7 @@ function BentoCardLinks() {
   return <BentoCard className={styles.links}>
     <div className={styles.content}>
       {links.map(link =>
-        <a className={styles.link} target="_blank" href={link.url}>
+        <a key={link.name} className={styles.link} target="_blank" href={link.url}>
           {link.name}
         </a>
       )}

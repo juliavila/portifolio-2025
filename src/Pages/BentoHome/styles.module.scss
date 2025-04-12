@@ -19,24 +19,39 @@ $max-width: 860px;
   background-color: $color-dark;
 
   .content {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: $header-height 1fr auto;
     gap: $spacing;
     max-width: $max-width;
     margin: auto;
     height: 100%;
   }
 
-  .deck {
-    display: grid;
-    gap: $spacing;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(9, 1fr);
-    height: calc(100% - ($header-height + $spacing));
+  .footer {
+    @include montserrat-alternates-light();
+    color: $color-light;
+    font-size: 12px;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 3px;
   }
 
-  .card {
+  .deck-container {
+    position: relative;
 
+    .deck {
+      position: absolute;
+      display: grid;
+      gap: $spacing;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(9, 1fr);
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+
+  .card {
     /** animation config */
     animation-duration: $animation-duration;
     animation-iteration-count: 1;

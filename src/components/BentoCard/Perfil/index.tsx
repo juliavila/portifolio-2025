@@ -13,6 +13,10 @@ const detailsParagraphs = [
   'Sou formada pelo IFSul como técnica em informática (2014) e sou graduada em Design Digital pela ULBRA (2024).'
 ];
 
+const footer = <address>
+  <a href="mailto:juliaviladelima@gmail.com">contact me</a>
+</address>
+
 function BentoCardPerfil({ showDetails, onClose, onFocus }: Props) {
   return <BentoCard>
     {showDetails
@@ -21,6 +25,7 @@ function BentoCardPerfil({ showDetails, onClose, onFocus }: Props) {
         onClose={onClose}
         title="Júlia Vila de Lima"
         paragraphs={detailsParagraphs}
+        footer={footer}
       />
       :
       <button

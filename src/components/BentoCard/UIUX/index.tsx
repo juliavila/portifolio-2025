@@ -57,7 +57,10 @@ function characeter(char: string, index: number) {
 
   const onMouseLeave = () => setIsDark(current => !current)
 
-  return <p className={colorStyle} onMouseLeave={onMouseLeave}>
+  return <p
+    key={`${char}${index}`}
+    className={colorStyle}
+    onMouseLeave={onMouseLeave}>
     {char}
   </p>
 

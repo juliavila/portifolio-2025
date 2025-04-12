@@ -47,11 +47,13 @@
   }
 
   .footer {
+    width: 100%;
 
     p,
     span,
     a {
       @include montserrat-alternates-regular-italic();
+      text-align: left;
     }
 
     a {
