@@ -1,4 +1,7 @@
+import { useContext } from "react";
 import BentoCard from ".."
+import { InternacionalizationContext } from "../../../context/internacionalizationContext";
+import texts from "../../../internationalization/texts";
 import BentoCardDetails from "../BentoCardDetails";
 import styles from './styles.module.scss'
 
@@ -8,23 +11,22 @@ type Props = {
   onFocus: () => void;
 }
 
-const detailsParagraphs = [
-  'Tenho 9 anos de experiência em desenvolvimento de software, atuo hoje como desenvolvedora frontend e designer de experiência.',
-  'Sou formada pelo IFSul como técnica em informática (2014) e sou graduada em Design Digital pela ULBRA (2024).'
-];
-
-const footer = <address>
-  <a href="mailto:juliaviladelima@gmail.com">contact me</a>
-</address>
-
 function BentoCardPerfil({ showDetails, onClose, onFocus }: Props) {
+  const { language } = useContext(InternacionalizationContext);
+
+  const [var1, var2] = texts.bentoCard.perfil.cardContent[language].split('#');
+
+  const footer = <address>
+    <a href="mailto:juliaviladelima@gmail.com">{texts.bentoCard.perfil.details.footer[language]}</a>
+  </address>
+
   return <BentoCard>
     {showDetails
       ?
       <BentoCardDetails
         onClose={onClose}
         title="Júlia Vila de Lima"
-        paragraphs={detailsParagraphs}
+        paragraphs={texts.bentoCard.perfil.details.paragraphs[language]}
         footer={footer}
       />
       :
@@ -34,9 +36,9 @@ function BentoCardPerfil({ showDetails, onClose, onFocus }: Props) {
       >
         <h1>Júlia<br />Vila<br />Lima</h1>
         <p>
-          frontend developer,
+          {var1}
           <br />
-          UI and UX designer
+          {var2}
           <br />
           <br />
           ✽ ✾ ✿ ❀ ❁ ❃ ❊ ❋ ✤

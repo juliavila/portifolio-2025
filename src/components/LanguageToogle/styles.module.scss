@@ -1,0 +1,11 @@
+@use './../../styles' as *;
+
+.toogle {
+  background-color: $color-light;
+  padding: 8px;
+  border-radius: $border-radius;
+
+  //TODO: remover
+  width: 50px;
+  text-align: center;
+}

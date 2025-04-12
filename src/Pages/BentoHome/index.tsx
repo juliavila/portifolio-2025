@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import BentoCard from '../../components/BentoCard'
 import Header from '../../components/Header';
 import styles from './styles.module.scss'
+import texts from '../../internationalization/texts';
+import { InternacionalizationContext } from '../../context/internacionalizationContext';
 
 const ANIMATION_DURATION = 300;
 
@@ -32,6 +34,7 @@ function getAllCards(status: statusTypes, animation: animationTypes): cardConfig
 };
 
 export const BentoHome = () => {
+  const { language } = useContext(InternacionalizationContext);
 
   const [cardStatus, setCardStatus] = useState<cardConfig>(getAllCards('idle', 'ease-in'));
   const [focused, setFocused] = useState<cardsTypes | undefined>();
@@ -124,7 +127,7 @@ export const BentoHome = () => {
         </div>
       </div>
 
-      <p className={styles.footer}>Designed and Built by Júlia Lima • 2025</p>
+      <p className={styles.footer}>{texts.foooter[language]}</p>
     </div>
   </div >
 }

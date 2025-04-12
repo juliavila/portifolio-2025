@@ -1,6 +1,8 @@
-import { ReactElement } from 'react';
+import { ReactElement, useContext } from 'react';
 import Button from '../../Button';
 import styles from './styles.module.scss';
+import texts from '../../../internationalization/texts';
+import { InternacionalizationContext } from '../../../context/internacionalizationContext';
 
 type Props = {
   onClose: () => void;
@@ -10,9 +12,12 @@ type Props = {
 }
 
 function BentoCardDetails({ onClose, title, paragraphs, footer }: Props) {
+
+  const { language } = useContext(InternacionalizationContext);
+
   return <div className={styles.details}>
     <div className={styles.header}>
-      <Button onClick={onClose}>back</Button>
+      <Button onClick={onClose}>{texts.buttons.back[language]}</Button>
     </div>
     <div className={styles.content}>
       <h2>{title}</h2>

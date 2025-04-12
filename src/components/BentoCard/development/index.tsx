@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import BentoCard from "..";
-import { concatClassName } from "../../../util/style";
+import { InternacionalizationContext } from "../../../context/internacionalizationContext";
+import texts from "../../../internationalization/texts";
 import BentoCardDetails from "../BentoCardDetails";
 import styles from './styles.module.scss'
 
@@ -11,37 +13,36 @@ type Props = {
 
 const word = 'development'
 
-const className = (names: string) => concatClassName(styles, names);
-
-const detailsParagraphs = ['Tenho 9 anos de experiência em desenvolvimento de software, atuando principalmente com foco em front-end web.',
-  'Tenho amplo domínio de HTML, CSS, JavaScript e TypeScript, além de experiência com frameworks como React e Angular. Trabalho com metodologias ágeis, possuo conhecimento em testes unitários e versionamento com Git. ',
-];
-
-const detailsFooter = <p>Ah, e este site que você está navegando foi desenvolvido por mim. 😊 O projeto está diponível no
-  {' '}
-  <a
-    href="https://github.com/juliavila/portifolio-2025"
-    target="_blank"
-  >
-    Github
-  </a>
-  .
-</p>
-
 function BentoCardDevelopment({ showDetails, onClose, onFocus }: Props) {
+  const { language } = useContext(InternacionalizationContext);
+
+  const [var1, var2] = texts.bentoCard.development.details.footer.text[language].split('#replace#');
+
+  const detailsFooter =
+    <p>
+      {var1}
+      <a
+        href="https://github.com/juliavila/portifolio-2025"
+        target="_blank"
+      >
+        Github
+      </a>
+      {var2}
+    </p>
+
   return <BentoCard>
     {showDetails
       ?
       <BentoCardDetails
         onClose={onClose}
-        title={"Desenvolvimento"}
-        paragraphs={detailsParagraphs}
+        title={texts.bentoCard.development.details.title[language]}
+        paragraphs={texts.bentoCard.development.details.paragraphs[language]}
         footer={detailsFooter}
       />
       :
       <button className={styles.content} onClick={onFocus}>
-        <span className={className('word one')}>{word}</span>
-        <span className={className('word two')}>{word}</span>
+        <span className={`${styles.word} ${styles.one}`}>{word}</span>
+        <span className={`${styles.word} ${styles.two}`}>{word}</span>
       </button>
     }
   </BentoCard>

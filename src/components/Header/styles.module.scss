@@ -6,16 +6,22 @@
   justify-content: space-between;
   align-items: center;
 
-  .title {
-    color: $color-light;
-    font-size: 24px;
-    cursor: pointer;
+  .actions {
+    display: flex;
+    gap: $spacing;
+    align-items: center;
 
-    letter-spacing: 1.4px;
+    .title {
+      color: $color-light;
+      font-size: 24px;
+      cursor: pointer;
 
-    &:hover {
-      @include montserrat-alternates-semibold();
-      letter-spacing: 1px;
+      letter-spacing: 1.4px;
+
+      &:hover {
+        @include montserrat-alternates-semibold();
+        letter-spacing: 1px;
+      }
     }
   }
 
