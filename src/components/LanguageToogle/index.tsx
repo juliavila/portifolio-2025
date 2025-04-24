@@ -9,10 +9,9 @@ export default function LanguageToogle() {
   const nextLanguage: Languages = useMemo(() => language === 'en' ? 'pt' : 'en', [language])
 
   return <button
-    className={styles.toogle}
+    className={`${styles.toogle} ${styles[language]}`}
     onClick={() => setLanguage(nextLanguage)}
   >
-    to {nextLanguage}
+    <span className={styles.ball} />
   </button>
-
 }

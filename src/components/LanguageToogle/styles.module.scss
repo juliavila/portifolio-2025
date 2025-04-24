@@ -1,11 +1,112 @@
 @use './../../styles' as *;
 
+@mixin animationConfig() {
+  animation-duration: 400ms;
+  animation-iteration-count: 1;
+  transition-timing-function: ease-in;
+  transition-property: opacity;
+}
+
+@mixin toogleOption($content, $left, $right) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56%;
+  position: absolute;
+  font-size: 12px;
+  height: 100%;
+  top: 0;
+  left: $left;
+  right: $right;
+  content: $content;
+  z-index: 1;
+
+  transition: color 380ms;
+}
+
 .toogle {
-  background-color: $color-light;
+  position: relative;
+  width: 70px;
+  height: 34px;
   padding: 8px;
   border-radius: $border-radius;
+  border: 1px solid $color-light;
+  background-color: $color-dark;
+  color: $color-light;
 
-  //TODO: remover
-  width: 50px;
-  text-align: center;
+  @include montserrat-alternates-bold();
+
+  .ball {
+    background-color: $color-light;
+    height: calc(100% - 4px);
+    width: 52%;
+    position: absolute;
+    top: 0;
+    border: 1px solid $color-dark;
+    border-radius: calc($border-radius - 3px);
+    margin: 2px;
+    box-sizing: border-box;
+
+    @include animationConfig();
+  }
+
+  &::before {
+    @include toogleOption('PT', 0, auto);
+  }
+
+  &::after {
+    @include toogleOption('EN', auto, 0);
+  }
+
+  &.pt {
+    .ball {
+      animation-name: to-left;
+      right: auto;
+      left: 0;
+    }
+
+    &::before {
+      color: $color-dark;
+    }
+
+    &::after {
+      color: $color-light;
+    }
+  }
+
+  &.en {
+    .ball {
+      animation-name: to-right;
+      right: 0;
+      left: auto;
+    }
+
+    &::before {
+      color: $color-light;
+    }
+
+    &::after {
+      color: $color-dark;
+    }
+  }
+}
+
+@keyframes to-left {
+  from {
+    transform: translateX(calc(100% - 6px));
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes to-right {
+  from {
+    transform: translateX(calc(-100% + 6px));
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
