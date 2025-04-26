@@ -8,6 +8,9 @@ $spacing: 32px;
 $border-radius: 16px;
 $header-height: 80px;
 
+//breakpoints
+$layout-breakpoint-small: 600px;
+
 * {
   color: $color-dark;
 }

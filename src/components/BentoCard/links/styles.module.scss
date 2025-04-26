@@ -40,3 +40,9 @@
 
   }
 }
+
+@media (max-width: $layout-breakpoint-small) {
+  .links {
+    padding: 40px 0;
+  }
+}

@@ -74,7 +74,7 @@ export const BentoHome = () => {
     }
   }
 
-  return <div className={styles.bentoHome}>
+  return <div className={styles['bento-home']}>
     <div className={styles.content}>
 
       <Header goToHome={reestartCards} />

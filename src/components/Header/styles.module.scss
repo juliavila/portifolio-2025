@@ -2,9 +2,9 @@
 
 .header {
   display: flex;
-  display: flex;
   justify-content: space-between;
   align-items: center;
+  height: $header-height;
 
   .actions {
     display: flex;
@@ -72,5 +72,21 @@
 
   to {
     border-color: $color-light;
+  }
+}
+
+@media (max-width: $layout-breakpoint-small) {
+  .header {
+    .actions {
+      flex-direction: column-reverse;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 0px;
+      height: 100%;
+
+      .title {
+        margin: 0;
+      }
+    }
   }
 }

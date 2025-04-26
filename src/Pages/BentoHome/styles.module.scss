@@ -10,7 +10,7 @@ $max-width: 860px;
   grid-row-end: 10;
 }
 
-.bentoHome {
+.bento-home {
   background-color: $color-dark;
   width: 100%;
   height: 100%;
@@ -127,5 +127,26 @@ $max-width: 860px;
 
   to {
     opacity: 0;
+  }
+}
+
+@media (max-width: $layout-breakpoint-small) {
+  .bento-home {
+    height: auto;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .deck-container {
+      position: relative;
+
+      .deck {
+        position: static;
+        display: flex;
+        flex-direction: column;
+      }
+    }
   }
 }

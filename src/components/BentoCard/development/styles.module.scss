@@ -1,7 +1,6 @@
 @use './../../../styles' as *;
 
 .content {
-
   position: relative;
   color: $color-dark;
   height: 100%;
@@ -92,5 +91,11 @@
 
   to {
     transform: translate(-55%, -55%);
+  }
+}
+
+@media (max-width: $layout-breakpoint-small) {
+  .content {
+    height: 500px;
   }
 }
