@@ -127,7 +127,9 @@ export const BentoHome = () => {
         </div>
       </div>
 
-      <p className={styles.footer}>{texts.foooter[language]}</p>
+      <p className={styles.footer}>
+        {texts.foooter[language]}
+      </p>
     </div>
   </div >
 }

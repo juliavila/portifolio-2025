@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 import styles from './styles.module.scss';
 
 function Modal({ showModal = false, onCloseModal, children }: { showModal: boolean, onCloseModal: () => void, children: ReactElement }) {

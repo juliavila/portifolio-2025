@@ -20,4 +20,13 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    outDir: 'dist',
+    sourcemap: true,
+    assetsDir: 'assets',
+    minify: 'esbuild',
+    target: 'esnext',
+    emptyOutDir: true,
+    reportCompressedSize: true,
+  }
 })
