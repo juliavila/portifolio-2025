@@ -17,7 +17,7 @@ function Header({ goToHome }: { goToHome: () => void }) {
         className={styles.title}
         onClick={goToHome}
       >
-        {texts.header[language]} ✿
+        {texts.header[language]}
       </h3>
     </div>
   </div>

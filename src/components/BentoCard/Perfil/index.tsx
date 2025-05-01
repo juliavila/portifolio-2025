@@ -4,6 +4,7 @@ import { InternacionalizationContext } from "../../../context/internacionalizati
 import texts from "../../../internationalization/texts";
 import BentoCardDetails from "../BentoCardDetails";
 import styles from './styles.module.scss'
+import InfinityMarquee from "../../InfinityMarquee";
 
 type Props = {
   showDetails: boolean,
@@ -35,14 +36,24 @@ function BentoCardPerfil({ showDetails, onClose, onFocus }: Props) {
         onClick={onFocus}
       >
         <h1>Júlia<br />Vila<br />Lima</h1>
-        <p>
-          {var1}
-          <br />
-          {var2}
-          <br />
-          <br />
-          ✽ ✾ ✿ ❀ ❁ ❃ ❊ ❋ ✤
-        </p>
+
+        <div className={styles['marquee']}>
+          <InfinityMarquee text={`${var1} ✽ ${var2} ✿`} />
+        </div>
+
+        <div className={styles.description}>
+          <p>
+            {var1}
+          </p>
+          <p>
+            {var2}
+          </p>
+          <p>
+            ✽ ✿
+            {/* ✽ ✾ ✿ ❀ ❁ ❃ ❊ ❋ ✤ */}
+          </p>
+        </div>
+
       </button>
     }
   </ BentoCard>

@@ -39,8 +39,8 @@ const texts = ({
     },
     perfil: {
       cardContent: {
-        en: 'frontend developer,#UI and UX designer',
-        pt: 'desenvolvedora frontend#e UI/UX designer '
+        en: 'frontend developer#UI and UX designer',
+        pt: 'desenvolvedora frontend#UI/UX designer '
       },
       details: {
         paragraphs: {
