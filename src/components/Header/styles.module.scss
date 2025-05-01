@@ -75,7 +75,7 @@
   }
 }
 
-@media (max-width: $layout-breakpoint-small) {
+@media (max-width: $layout-breakpoint-small-width) {
   .header {
     .actions {
       flex-direction: column-reverse;

@@ -130,7 +130,7 @@ $max-width: 860px;
   }
 }
 
-@media (max-width: $layout-breakpoint-small) {
+@media (max-width: $layout-breakpoint-small-width) {
   .bento-home {
     height: auto;
 

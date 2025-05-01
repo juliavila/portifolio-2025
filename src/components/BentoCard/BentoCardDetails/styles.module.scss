@@ -8,6 +8,22 @@
   height: 100%;
   box-sizing: border-box;
   max-width: 100%;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    border-radius: 100%;
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    margin: $border-radius;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-highlight;
+    width: 18px;
+    border-radius: 10px;
+  }
 
   .header {
     display: flex;

@@ -94,8 +94,22 @@
   }
 }
 
-@media (max-width: $layout-breakpoint-small) {
+@media (max-width: $layout-breakpoint-small-width) {
   .content {
     height: 500px;
+  }
+}
+
+@media (max-height: $layout-breakpoint-medium-height) and (orientation: landscape) {
+  .content {
+    .word {
+      font-size: 76px;
+      line-height: 64px;
+      max-width: 186px;
+    }
+
+    &:hover .word {
+      max-width: 190px;
+    }
   }
 }

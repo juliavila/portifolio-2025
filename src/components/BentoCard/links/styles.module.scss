@@ -41,8 +41,17 @@
   }
 }
 
-@media (max-width: $layout-breakpoint-small) {
+@media (max-width: $layout-breakpoint-small-width) {
   .links {
     padding: 40px 0;
+  }
+}
+
+@media (max-height: $layout-breakpoint-medium-height) and (orientation: landscape) {
+  .links {
+    .content .link {
+      font-size: 35px;
+      letter-spacing: 3.2px;
+    }
   }
 }

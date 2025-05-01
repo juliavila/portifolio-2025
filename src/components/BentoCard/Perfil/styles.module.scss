@@ -120,9 +120,18 @@
   }
 }
 
-@media (max-width: $layout-breakpoint-small) {
+@media (max-width: $layout-breakpoint-small-width) {
   .container {
     height: 400px;
+  }
+}
+
+@media (max-height: $layout-breakpoint-medium-height) and (orientation: landscape) {
+  .container {
+    h1 {
+      font-size: 64px;
+      line-height: 60px;
+    }
   }
 }
 

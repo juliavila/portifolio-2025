@@ -6,10 +6,11 @@ $color-highlight: #C562CE;
 // sizes
 $spacing: 32px;
 $border-radius: 16px;
-$header-height: 80px;
+$header-height: 64px;
 
 //breakpoints
-$layout-breakpoint-small: 600px;
+$layout-breakpoint-small-width: 600px;
+$layout-breakpoint-medium-height: 860px;
 
 * {
   color: $color-dark;
