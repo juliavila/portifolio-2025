@@ -11,6 +11,7 @@
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+  padding-bottom: 30px;
 
   @include montserrat-alternates-light();
 
@@ -20,35 +21,9 @@
     line-height: 92px;
     color: $color-dark;
     text-align: left;
-  }
-
-  p,
-  p span {
-    font-size: 22px;
-    color: $color-highlight;
-    margin: 0;
-  }
-
-  h1,
-  .description {
     position: absolute;
-
-    /** animation config */
-    animation-duration: 400ms;
-    animation-iteration-count: 1;
-    transition-timing-function: ease;
-  }
-
-  h1 {
-    animation-name: show-name;
     opacity: 100%;
     margin: 0;
-  }
-
-  .description {
-    animation-name: hide-desc;
-    opacity: 0;
-    transform: translate(0, 200%);
   }
 
   .marquee {
@@ -59,64 +34,16 @@
     align-items: center;
     justify-content: center;
     bottom: 0;
-    display: none;
 
     div {
       background: $color-highlight;
       height: 32px;
 
       p span {
+        font-size: 22px;
         color: $color-light;
       }
     }
-  }
-}
-
-@keyframes show-name {
-  from {
-    opacity: 0;
-    transform: translate(0, -100%);
-  }
-
-  to {
-    opacity: 100%;
-    transform: translate(0, 0);
-  }
-}
-
-@keyframes hide-name {
-  from {
-    opacity: 100%;
-    transform: translate(0, 0);
-  }
-
-  to {
-    opacity: 0;
-    transform: translate(0, -100%);
-  }
-}
-
-@keyframes show-desc {
-  from {
-    opacity: 0;
-    transform: translate(0, 200%);
-  }
-
-  to {
-    opacity: 100%;
-    transform: translate(0, 0);
-  }
-}
-
-@keyframes hide-desc {
-  from {
-    opacity: 100%;
-    transform: translate(0, 0);
-  }
-
-  to {
-    opacity: 0;
-    transform: translate(0, 200%);
   }
 }
 
@@ -131,45 +58,6 @@
     h1 {
       font-size: 64px;
       line-height: 60px;
-    }
-  }
-}
-
-@media (hover: none) {
-  .container {
-    padding-bottom: 30px;
-
-    .marquee {
-      display: flex;
-    }
-
-    &:hover,
-    &:not(:hover) {
-      h1 {
-        animation: none;
-      }
-
-      .description {
-        animation: none;
-      }
-    }
-  }
-}
-
-@media (hover: hover) {
-  .container {
-    &:hover {
-      h1 {
-        animation-name: hide-name;
-        opacity: 0;
-        transform: translate(0, -100%);
-      }
-
-      .description {
-        animation-name: show-desc;
-        opacity: 100%;
-        transform: translate(0, 0);
-      }
     }
   }
 }

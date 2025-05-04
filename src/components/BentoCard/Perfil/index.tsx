@@ -41,19 +41,6 @@ function BentoCardPerfil({ showDetails, onClose, onFocus }: Props) {
           <InfinityMarquee text={`${var1} ✽ ${var2} ✿`} />
         </div>
 
-        <div className={styles.description}>
-          <p>
-            {var1}
-          </p>
-          <p>
-            {var2}
-          </p>
-          <p>
-            ✽ ✿
-            {/* ✽ ✾ ✿ ❀ ❁ ❃ ❊ ❋ ✤ */}
-          </p>
-        </div>
-
       </button>
     }
   </ BentoCard>
