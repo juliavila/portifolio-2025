@@ -1,18 +1,23 @@
+@use './../../styles/' as *;
+
 .marquee {
   width: 100%;
   position: relative;
   overflow: hidden;
+  height: 32px;
 
   p {
     margin: 0 auto;
     white-space: nowrap;
     overflow: hidden;
     position: absolute;
+    min-width: 100%;
 
     span {
       display: inline-block;
       padding-left: calc(100% + 6px);
       animation: marquee 8s linear infinite;
+      font-size: 22px;
     }
 
     span.text-2 {
@@ -27,6 +32,17 @@
 
     100% {
       transform: translate(-100%, 0);
+    }
+  }
+}
+
+@media (max-height: $layout-breakpoint-small-height) and (orientation: landscape) {
+  .marquee {
+    height: 26px;
+
+    p span {
+      font-size: 16px;
+      line-height: 26px;
     }
   }
 }

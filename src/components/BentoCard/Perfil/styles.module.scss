@@ -37,10 +37,8 @@
 
     div {
       background: $color-highlight;
-      height: 32px;
 
       p span {
-        font-size: 22px;
         color: $color-light;
       }
     }
@@ -54,10 +52,23 @@
 }
 
 @media (max-height: $layout-breakpoint-medium-height) and (orientation: landscape) {
-  .container {
-    h1 {
-      font-size: 64px;
-      line-height: 60px;
-    }
+  .container h1 {
+    font-size: 64px;
+    line-height: 60px;
+  }
+}
+
+
+@media (max-height: $layout-breakpoint-medium-height) and (orientation: landscape) {
+  .container h1 {
+    font-size: 64px;
+    line-height: 60px;
+  }
+}
+
+
+@media (max-height: $layout-breakpoint-small-height) and (orientation: landscape) {
+  .container .marquee {
+    height: 64px;
   }
 }

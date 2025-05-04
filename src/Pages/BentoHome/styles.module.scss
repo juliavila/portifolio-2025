@@ -14,14 +14,14 @@ $max-width: 860px;
   background-color: $color-dark;
   width: 100%;
   height: 100%;
-  padding: $spacing;
+  padding: var(--spacing);
   box-sizing: border-box;
   background-color: $color-dark;
 
   .content {
     display: grid;
     grid-template-rows: $header-height 1fr auto;
-    gap: $spacing;
+    gap: var(--spacing);
     max-width: $max-width;
     margin: auto;
     height: 100%;
@@ -42,7 +42,7 @@ $max-width: 860px;
     .deck {
       position: absolute;
       display: grid;
-      gap: $spacing;
+      gap: var(--spacing);
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(9, 1fr);
       height: 100%;

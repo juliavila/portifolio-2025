@@ -30,7 +30,7 @@
 
   .container {
     background-color: $color-light;
-    padding: calc($spacing / 2) $spacing;
+    padding: calc(var(--spacing) / 2) var(--spacing);
     border-radius: $border-radius;
     z-index: 2;
   }

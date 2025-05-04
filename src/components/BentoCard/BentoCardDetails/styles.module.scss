@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: $spacing;
+  padding: var(--spacing);
   height: 100%;
   box-sizing: border-box;
   max-width: 100%;
@@ -29,18 +29,13 @@
     display: flex;
     justify-content: flex-start;
     width: 100%;
+    position: absolute;
+    left: var(--spacing);
   }
 
   .content {
     max-width: 600px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: $spacing 0;
-
-    gap: $spacing;
+    margin: auto;
 
     h2 {
       @include montserrat-alternates-light();
@@ -51,13 +46,14 @@
       line-height: 100%;
       margin-bottom: 16px;
       word-break: break-word;
+      margin: 0 0 var(--spacing);
     }
 
     p {
       @include montserrat-alternates-regular();
       font-size: 16px;
       width: 100%;
-      margin: 0;
+      margin: 0 0 var(--spacing);
       line-height: 200%;
       letter-spacing: 1.1pt;
     }

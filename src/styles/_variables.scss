@@ -4,14 +4,24 @@ $color-dark: #101010;
 $color-highlight: #C562CE;
 
 // sizes
-$spacing: 32px;
 $border-radius: 16px;
 $header-height: 34px;
 
 //breakpoints
 $layout-breakpoint-small-width: 600px;
 $layout-breakpoint-medium-height: 860px;
+$layout-breakpoint-small-height: 700px;
 
 * {
   color: $color-dark;
+}
+
+:root {
+  --spacing: 32px;
+}
+
+@media (max-height: $layout-breakpoint-small-height) and (orientation: landscape) {
+  :root {
+    --spacing: 16px;
+  }
 }
