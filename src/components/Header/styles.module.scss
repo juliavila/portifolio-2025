@@ -6,45 +6,17 @@
   align-items: center;
   height: $header-height;
 
-  .actions {
-    display: flex;
-    gap: $spacing;
-    align-items: center;
+  .title {
+    color: $color-light;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0;
 
-    .title {
-      color: $color-light;
-      font-size: 24px;
-      cursor: pointer;
-
-      letter-spacing: 1.4px;
-
-      &:hover {
-        @include montserrat-alternates-semibold();
-        letter-spacing: 1px;
-      }
-    }
-  }
-
-  .pic {
-    height: $header-height;
-    aspect-ratio: 1;
-    background-image: url("../../../public/julia_vila_lima.jpg");
-    background-size: cover;
-    background-position: 50%;
-    border-radius: $border-radius;
-    border: 4px solid $color-light;
-    box-sizing: border-box;
-
-    /** animation config */
-    animation-duration: 600ms;
-    animation-iteration-count: 1;
-    transition-timing-function: ease;
-
-    animation-name: unhighlight-frame;
+    letter-spacing: 1.4px;
 
     &:hover {
-      animation-name: highlight-frame;
-      border-color: $color-highlight;
+      @include montserrat-alternates-semibold();
+      letter-spacing: 1px;
     }
   }
 }
@@ -53,40 +25,4 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-@keyframes highlight-frame {
-  from {
-    border-color: $color-light;
-  }
-
-  to {
-    border-color: $color-highlight;
-  }
-}
-
-@keyframes unhighlight-frame {
-  from {
-    border-color: $color-highlight;
-  }
-
-  to {
-    border-color: $color-light;
-  }
-}
-
-@media (max-width: $layout-breakpoint-small-width) {
-  .header {
-    .actions {
-      flex-direction: column-reverse;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 0px;
-      height: 100%;
-
-      .title {
-        margin: 0;
-      }
-    }
-  }
 }
