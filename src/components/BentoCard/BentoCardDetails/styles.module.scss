@@ -29,13 +29,14 @@
     display: flex;
     justify-content: flex-start;
     width: 100%;
-    position: absolute;
     left: var(--spacing);
+    margin-bottom: var(--spacing);
   }
 
   .content {
     max-width: 600px;
     margin: auto;
+    padding-bottom: var(--spacing);
 
     h2 {
       @include montserrat-alternates-light();

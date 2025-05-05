@@ -17,6 +17,8 @@ $max-width: 860px;
   padding: var(--spacing);
   box-sizing: border-box;
   background-color: $color-dark;
+  min-height: 570px;
+  overflow-y: auto;
 
   .content {
     display: grid;
