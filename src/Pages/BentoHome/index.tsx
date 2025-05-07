@@ -94,14 +94,6 @@ export const BentoHome = () => {
           </div>
 
           <div
-            card-status={cardStatus.links.status}
-            card-animation={cardStatus.links.animation}
-            className={`${styles.card} ${styles.links}`}
-          >
-            <BentoCard.Links />
-          </div>
-
-          <div
             card-status={cardStatus.uiux.status}
             card-animation={cardStatus.uiux.animation}
             className={`${styles.card} ${styles.uiux}`}
@@ -123,6 +115,14 @@ export const BentoHome = () => {
               onClose={reestartCards}
               onFocus={() => focusCard('development')}
             />
+          </div>
+
+          <div
+            card-status={cardStatus.links.status}
+            card-animation={cardStatus.links.animation}
+            className={`${styles.card} ${styles.links}`}
+          >
+            <BentoCard.Links />
           </div>
         </div>
       </div>
